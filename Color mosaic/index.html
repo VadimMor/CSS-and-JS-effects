@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color mosaic</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="section"></section>
+    <script>
+        let boxesNum = window.innerWidth > 1500 ? (window.innerWidth * window.innerHeight / (window.innerWidth * 1.2)) : (window.innerWidth * window.innerHeight / (window.innerWidth * 0.75));
+
+        for (let i=0; i <= boxesNum; i++) {
+            let box = document.createElement('div');
+            box.classList.add('box');
+            document.querySelector('.section').appendChild(box);
+        }
+
+        function animateBox() {
+            let boxes = document.querySelectorAll('.box');
+            let num = Math.floor(Math.random()*boxes.length);
+            boxes[num].classList.toggle('animate');
+        }
+
+        setInterval(animateBox);
+    </script>
+</body>
+</html>

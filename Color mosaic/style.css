@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    width: 100vw;
+    height: 100vh;
+    
+    position: relative;
+    overflow: hidden;
+
+    background: #000;
+}
+.section .box {
+    width: 40px;
+    height: 40px;
+
+    position: relative;
+
+    background: #222;
+}
+.animate {
+    animation: animateColor 2s linear forwards;
+}
+
+@keyframes animateColor {
+    0%
+    {
+        filter: hue-rotate(0);
+    }
+    50%
+    {
+        background: #0f0;
+    }
+    100%
+    {
+        filter: hue-rotate(360deg);
+    }
+}
